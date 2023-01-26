@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# dispays the time for 12 hours and 59 minutes
+i="0"
+while [ $i -lt "760" ]; do
+	if [ $(($i % 60)) -eq "0" ]; then
+		echo "Hour: $(($i/60))"
+		i=$((i+1))
+	elif [ $(($i % 60)) -ne "0" ]; then
+		echo $i
+		i=$((i+1))
+fi
+done

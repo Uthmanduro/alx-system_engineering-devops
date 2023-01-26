@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# prints numbers from 1 to 20 and some string in a particular iteration
+for i in {1..20}; do
+	if [ $i -eq "5" ]; then
+		echo "bad luck from China"
+		echo $i
+	elif [ $i -eq "10" ]; then
+		echo "bad luck from Japan"
+		echo $i
+	elif [ $i -eq "18" ]; then
+		echo "bad luck from Italy"
+		echo $i
+	else
+		echo $i
+fi
+done
