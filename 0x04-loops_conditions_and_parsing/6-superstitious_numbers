@@ -1,19 +1,21 @@
 #!/usr/bin/env bash
 # prints numbers from 1 to 20 and some string in a particular iteration
-for i in {1..20}; do
+i="1"
+while [ $i -lt 21 ]; do
 	if [ $i -eq "4" ]; then
 		echo $i
 		echo "bad luck from China"
-		continue
+		i=$((i+1))
 	elif [ $i -eq "9" ]; then
 		echo $i
 		echo "bad luck from Japan"
-		continue
+		i=$((i+1))
 	elif [ $i -eq "17" ]; then
 		echo $i
 		echo "bad luck from Italy"
-		continue
+		i=$((i+1))
 	else
 		echo $i
+		i=$((i+1))
 fi
 done
