@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # loops from 1 to 10 and displays something in the 4 and 8 iteration
 i="0"
-while [ $i -lt "9" ]; do
+while [ $i -lt "10" ]; do
 	if [ $i -eq "3" ]; then
 		echo "bad luck"
 		i=$((i+1))
