@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# displays the files in the current directory
+for i in ls; do
+	
