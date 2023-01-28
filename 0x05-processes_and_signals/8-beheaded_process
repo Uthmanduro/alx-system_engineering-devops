@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# kill the process 7-highlander
+killall -e 7-highlander
