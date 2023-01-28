@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 # displays to infinity and beyond indefinitely
+trap "echo "I am invincible!!!" SIGTERM
 while true; do
-	if [[ "$pkill" ]]; then
-		echo "I am invincible!!!"
-	fi
 	echo "To infinity and beyond"
         sleep 2
 done
