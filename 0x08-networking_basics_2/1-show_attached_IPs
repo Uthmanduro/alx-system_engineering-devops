@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#display all active ipv4 ips 
+ip=$(hostname -I)
+ip_array=($ips)
+for item in "$ip"; do
+	echo $item
+done
