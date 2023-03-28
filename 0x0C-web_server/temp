@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Install Nginx web server
+sudo apt-get update
+sudo apt-get -y install nginx
+
+# Create a default web page
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+# Set up 301 redirection for /redirect_me
+ADD301_REDIRECT="
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+"
+
+# Update the default Nginx configuration to include the 301 redirection
+sudo sed -i '/server {/a '"$ADD301_REDIRECT"'' /etc/nginx/sites-available/default
+
+#
+
+
+
+
+
+The / character is used to separate the different parts of the command:
+
+location \/ {: the pattern to match
+a: the sed command to append a line after the matched pattern
+\t\treturn 301 http:\/\/example.com\/new_page;: the line to be appended
+/etc/nginx/sites-available/default: the file to apply the sed command to
