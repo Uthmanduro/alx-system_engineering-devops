@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
-#configures the server so that /resirect me redirects to another page
+#Editing the default config file
+
+sudo apt-get update
+sudo apt install -y nginx
 sudo sed -i '/server_name _;/a \        location /redirect_me {\n               return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n       }' /etc/nginx/sites-enabled/default
 sudo service nginx restart
