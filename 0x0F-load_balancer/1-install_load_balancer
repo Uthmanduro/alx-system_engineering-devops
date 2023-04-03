@@ -14,5 +14,6 @@ backend mywebserver
         server 154541-web-01 54.237.35.136:80 check
         server 154541-web-02 18.209.224.238:80 check
 EOF
-sudo service haproxy restart
-
+sudo /etc/init.d/haproxy start
+sudo update-rc.d haproxy defaults
+sudo /etc/init.d/haproxy reload
