@@ -1,0 +1,9 @@
+
+frontend http-in
+        bind *:80
+
+backend mywebserver
+        mode http
+        balance roundrobin
+        server 154541-web-01 54.237.35.136:80 check
+        server 154541-web-02 18.209.224.238:80 check
