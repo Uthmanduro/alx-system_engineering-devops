@@ -1,9 +1,8 @@
-
-frontend http-in
+frontend uthmanfrontend
         bind *:80
+        default_backend mywebserver
 
 backend mywebserver
-        mode http
         balance roundrobin
-        server 154541-web-01 54.237.35.136:80 check
-        server 154541-web-02 18.209.224.238:80 check
+        server web-01 54.237.35.136:80 check
+        server web-02 18.209.224.238:80 check
