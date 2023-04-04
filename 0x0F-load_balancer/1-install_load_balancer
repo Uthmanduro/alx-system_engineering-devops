@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 #install and configure HAproxy on my server
 sudo apt-get update
 sudo apt-get install haproxy -y
@@ -14,6 +14,4 @@ backend mywebserver
         server 154541-web-01 54.237.35.136:80 check
         server 154541-web-02 18.209.224.238:80 check
 EOF
-sudo /etc/init.d/haproxy start
-sudo update-rc.d haproxy defaults
-sudo /etc/init.d/haproxy reload
+sudo service haproxy restart
