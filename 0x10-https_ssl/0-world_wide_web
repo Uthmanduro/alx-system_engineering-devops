@@ -3,9 +3,16 @@
 function subdomain() {
     #display information about a subdomain
     if [ -n "$1" ] && [ -n "$2" ]; then
+        #run the dig command
         output=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:')
+
+        #use awk to get the record, subdomain, and destination
         read -r record subd destination <<< "$(awk 'NR==2 {print $4, $1, $5}' <<< "$output")"
+
+        #split the subdomain
         substr=${subd%%.*}
+
+        #print the result
         echo "The subdomain $substr is a $record record and points to $destination"
     elif [ "$1" ]; then
         list=(www lb-01 web-01 web-02)

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script configure my load balancer to accept encrypted traffic for my subdomain
+sudo apt update
+sudo apt install -y certbot python3-certbot-nginx
+sudo ss -tlnp | grep ':80'
+sudo service haproxy stop
+sudo certbot certonly --standalone -d www.druth.tech --non-interactive --agree-tos --email udurosinlohun@gmail.com
+sudo mkdir -p /etc/haproxy/certs
+DOMAIN='www.druth.tech' sudo -E bash -c 'cat /etc/letsencrypt/live/$DOMAIN/fullchain.pem /etc/letsencrypt/live/$DOMAIN/privkey.pem > /etc/haproxy/certs/$DOMAIN.pem'
+sudo chmod -R go-rwx /etc/haproxy/certs
+sudo cat /etc/haproxy/certs/www.druth.tech.pem
