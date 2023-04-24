@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """A python script that export data in csv format"""
 import csv
-import sys
 import requests
+import csv
 
 
 if __name__ == "__main__":
