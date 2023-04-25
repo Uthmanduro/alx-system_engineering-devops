@@ -2,8 +2,7 @@
 """A python script that export data in csv format"""
 import csv
 import requests
-import csv
-
+import sys
 
 if __name__ == "__main__":
     try:
